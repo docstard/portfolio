@@ -51,6 +51,7 @@ p{
     line-height: 2.5rem;
     font-weight: 300;
     letter-spacing: .05rem;
+    text-align: justify;
 }
 
 .cta{

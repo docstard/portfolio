@@ -1,10 +1,97 @@
 
+/* Service Section */
+
+#services .service{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+#services .service-top{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#services .service-bottom{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+	height: 100%;
+	width: 100%;
+	gap: 20px;
+}
+
+#services .service-item{
+    display: flex;
+	height: auto;
+    flex-basis: 80%;
+    align-items: flex-start;
+	/* gap: 20px; */
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url(../../public/img1.jpeg);
+    background-size: cover;
+    /* margin: 10px 5%; */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#services .service-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: -1;
+}
+
+#services .service-bottom .icon{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+#services .service-item h2{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#services .service-item p{
+    color: white;
+    text-align: left;
+}
+
+/* End Service Section */
+
+
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	#services .service-item{
+		flex-basis: 35%;
+		margin: 2.5%;
+	}
+}
+/* End Media Query For Tablet */
+
 
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
 	#services .service-bottom .service-item {
-		flex-basis: 22%;
+		flex-basis: 27%;
 		margin: 1.5%;
 	}
 }
