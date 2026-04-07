@@ -1,56 +1,74 @@
+"use client"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
 import * as z from "zod"
+import {
+    Field,
+    FieldDescription,
+    FieldError,
+    FieldGroup,
+    FieldLabel,
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText,
+    InputGroupTextarea,
+} from "@/components/ui/input-group"
+
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
 
 
 const formSchema = z.object({
     name: z.string().min(2).max(100),
-    email: z.string().email(),
-    companyName: z.string().min(10).max(500),
-    projectType: z.string().min(10).max(500),
-    budget: z.string().min(10).max(500),
-    projectBrief: z.string().min(10).max(500)
+    email: z.email(),
+    companyName: z.string().min(1).max(500),
+    projectType: z.string().min(1).max(500),
+    budget: z.string().min(1).max(500),
+    projectBrief: z.string().min(1).max(150)
 });
 
 const page = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
+        mode: "onBlur",
         defaultValues: {
             name: "",
             email: "",
             companyName: "",
-            projectType: "",
-            budget: "",
+            projectType: "Website",
+            budget: "10k-25k",
             projectBrief: "",
         },
     })
 
-    async function onSubmit( data: z.infer<typeof formSchema>) {
+    async function onSubmit(data: z.infer<typeof formSchema>) {
         // Do something with the form values.
         // e.preventDefault();
+        console.log(data)
         await fetch("/api/contact", {
             method: "POST",
             body: JSON.stringify(data),
         });
-        console.log(data)
         alert("Message sent!");
     }
 
+    console.log(form.watch());
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
 
-        const data = {}
 
-        await fetch("/api/contact", {
-            method: "POST",
-            body: JSON.stringify(data),
-        });
-
-        alert("Message sent!");
-    };
     return (
-        <main className="pt-32 pb-20 overflow-hidden">
+        <main className="pt-32 pb-20  overflow-hidden">
             {/* <!-- Ambient Background Accents --> */}
             <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
                 <div
@@ -63,7 +81,7 @@ const page = () => {
                     className="absolute top-[40%] left-[20%] w-75 h-75 bg-cyan-600/10 rounded-full blur-[100px]"
                 ></div>
             </div>
-            <div className="max-w-7xl mx-auto flex flex-col gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col gap-16 px-6 md:px-12">
                 {/* <!-- Hero Section --> */}
                 <header className="max-w-3xl flex flex-col gap-6">
                     <h1
@@ -91,99 +109,169 @@ const page = () => {
                             <div
                                 className="absolute -inset-px bg-linear-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-3xl opacity-50 pointer-events-none"
                             ></div>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 relative z-10">
-                                <
-                                    
-                                >
+                            <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 relative z-10">
+                                <FieldGroup>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <Controller
+                                            name="name"
+                                            control={form.control}
+                                            render={({ field, fieldState }) => (
+                                                <Field data-invalid={fieldState.invalid}>
+                                                    <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-name">
+                                                        Full Name
+                                                    </FieldLabel>
+
+                                                    <Input
+                                                        {...field}
+                                                        id="form-rhf-demo-name"
+                                                        aria-invalid={fieldState.invalid}
+                                                        placeholder="John Doe"
+                                                        // autoComplete="off"
+                                                        className="w-full h-10 md:h-14 bg-white/5 border border-white/10 rounded-xl  px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                                                    />
+                                                    {fieldState.invalid && (
+                                                        <FieldError errors={[fieldState.error]} />
+                                                    )}
+                                                </Field>
+                                            )}
+                                        />
+                                        <Controller
+                                            name="email"
+                                            control={form.control}
+                                            render={({ field, fieldState }) => (
+                                                <Field data-invalid={fieldState.invalid}>
+                                                    <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-email">
+                                                        Work Email
+                                                    </FieldLabel>
+
+                                                    <Input
+                                                        {...field}
+                                                        id="form-rhf-demo-email"
+                                                        aria-invalid={fieldState.invalid}
+                                                        placeholder="john@company.com"
+                                                        // autoComplete="off"
+                                                        className="w-full h-10 md:h-14 bg-white/5 border border-white/10 rounded-xl  px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                                                    />
+                                                    {fieldState.invalid && (
+                                                        <FieldError errors={[fieldState.error]} />
+                                                    )}
+                                                </Field>
+                                            )}
+                                        />
+                                        <Controller
+                                            name="companyName"
+                                            control={form.control}
+                                            render={({ field, fieldState }) => (
+                                                <Field data-invalid={fieldState.invalid}>
+                                                    <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-email">
+                                                        Company Name
+                                                    </FieldLabel>
+
+                                                    <Input
+                                                        {...field}
+                                                        id="form-rhf-demo-companyName"
+                                                        aria-invalid={fieldState.invalid}
+                                                        placeholder="Acme Inc."
+                                                        // autoComplete="off"
+                                                        className="w-full h-10 md:h-14 bg-white/5 border border-white/10 rounded-xl  px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                                                    />
+                                                    {fieldState.invalid && (
+                                                        <FieldError errors={[fieldState.error]} />
+                                                    )}
+                                                </Field>
+                                            )}
+                                        />
+                                        <Controller
+                                            name="projectType"
+                                            control={form.control}
+                                            render={({ field, fieldState }) => (
+                                                <Field data-invalid={fieldState.invalid}>
+                                                    <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-email">
+                                                        Project Type
+                                                    </FieldLabel>
+                                                    <select
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all appearance-none"
+                                                        {...field}
+                                                    >
+                                                        <option className="bg-slate-900 ">Website</option>
+                                                        <option className="bg-slate-900">AI/Automation</option>
+                                                        <option className="bg-slate-900">Web App</option>
+                                                        <option className="bg-slate-900">eCommerce</option>
+                                                        <option className="bg-slate-900">UI/UX Design</option>
+                                                    </select>
+                                                </Field>
+
+                                            )}
+                                        />
+                                        <Controller
+                                            name="budget"
+                                            control={form.control}
+                                            render={({ field, fieldState }) => (
+                                                <Field data-invalid={fieldState.invalid}>
+                                                    <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-email">
+                                                        Budget Range
+                                                    </FieldLabel>
+                                                    <select
+                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all appearance-none"
+                                                        {...field}
+                                                    >
+                                                        <option className="bg-slate-900">10k - 25k</option>
+                                                        <option className="bg-slate-900">25k - 50k</option>
+                                                        <option className="bg-slate-900">50k - 100k</option>
+                                                        <option className="bg-slate-900">100k+</option>
+                                                    </select>
+                                                </Field>
+
+                                            )}
+                                        />
+                                    </div>
+                                    <Controller
+                                        name="projectBrief"
+                                        control={form.control}
+                                        render={({ field, fieldState }) => (
+                                            <Field data-invalid={fieldState.invalid}>
+                                                <FieldLabel className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1" htmlFor="form-rhf-demo-projectBrief">
+                                                    Project Brief
+                                                </FieldLabel>
+                                                <InputGroup className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none">
+                                                    <InputGroupTextarea
+                                                        {...field}
+                                                        id="form-rhf-demo-projectBrief"
+                                                        placeholder="Tell us about your project goals..."
+                                                        rows={4}
+                                                        className="min-h-24 resize-none"
+                                                        aria-invalid={fieldState.invalid}
+                                                    />
+                                                    <InputGroupAddon align="block-end">
+                                                        <InputGroupText className="tabular-nums">
+                                                            {field.value.length}/150 characters
+                                                        </InputGroupText>
+                                                    </InputGroupAddon>
+                                                </InputGroup>
+
+                                                {fieldState.invalid && (
+                                                    <FieldError errors={[fieldState.error]} />
+                                                )}
+                                            </Field>
+                                        )}
+                                    />
+
 
                                 </FieldGroup>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-2">
-                                        <label
-                                            className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                        >Full Name</label
-                                        >
-                                        <input
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
-                                            placeholder="John Doe"
-                                            type="text"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label
-                                            className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                        >Work Email</label
-                                        >
-                                        <input
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
-                                            placeholder="john@company.com"
-                                            type="email"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="space-y-2">
-                                        <label
-                                            className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                        >Company Name</label
-                                        >
-                                        <input
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
-                                            placeholder="Acme Inc."
-                                            type="text"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label
-                                            className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                        >Project Type</label
-                                        >
-                                        <select
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all appearance-none"
-                                        >
-                                            <option className="bg-slate-900">Website</option>
-                                            <option className="bg-slate-900">AI/Automation</option>
-                                            <option className="bg-slate-900">Web App</option>
-                                            <option className="bg-slate-900">eCommerce</option>
-                                            <option className="bg-slate-900">UI/UX Design</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label
-                                        className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                    >Budget Range</label
+                                <Field>
+
+                                    <button
+                                        className="w-full mt-8 bg-white text-slate-950 font-bold py-5 rounded-xl hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2 group"
+                                        type="submit"
+                                        form="form-rhf-demo"
                                     >
-                                    <select
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all appearance-none"
-                                    >
-                                        <option className="bg-slate-900">10k - 25k</option>
-                                        <option className="bg-slate-900">25k - 50k</option>
-                                        <option className="bg-slate-900">50k - 100k</option>
-                                        <option className="bg-slate-900">100k+</option>
-                                    </select>
-                                </div>
-                                <div className="space-y-2">
-                                    <label
-                                        className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1"
-                                    >Project Brief</label
-                                    >
-                                    <textarea
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none"
-                                        placeholder="Tell us about your project goals..."
-                                        rows={4}
-                                    ></textarea>
-                                </div>
-                                <button
-                                    className="w-full bg-white text-slate-950 font-bold py-5 rounded-xl hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2 group"
-                                    type="submit"
-                                >
-                                    Send Inquiry
-                                    <span
-                                        className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform"
-                                    >arrow_forward</span
-                                    >
-                                </button>
+                                        Send Inquiry
+                                        <span
+                                            className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform"
+                                        >arrow_forward</span
+                                        >
+                                    </button>
+                                </Field>
                             </form>
                         </div>
                     </div>
