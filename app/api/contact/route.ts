@@ -3,13 +3,13 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { name, email, projectType, budget, timeline, message } =
+  const { name, email, projectType, budget, companyName, projectBrief, message } =
     await req.json();
 
   try {
     await resend.emails.send({
       from: "Atticflow <onboarding@resend.dev>",
-      to: "your@email.com",
+      to: "atticflow.business@gmail.com",
       subject: `🚀 New Project Inquiry from ${name}`,
 
       html: `
@@ -20,14 +20,15 @@ export async function POST(req: Request) {
 
         <hr />
 
+        <p><strong>Company Name:</strong> ${companyName}</p>
         <p><strong>Project Type:</strong> ${projectType}</p>
         <p><strong>Budget:</strong> ${budget}</p>
-        <p><strong>Timeline:</strong> ${timeline}</p>
-
+        
         <hr />
-
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        
+        <p><strong>Project Brief:</strong></p>
+        <p>${projectBrief}</p>
+        
       `,
     });
 
@@ -35,7 +36,7 @@ export async function POST(req: Request) {
       from: "Atticflow <onboarding@resend.dev>",
       to: email,
       subject: "We received your request 🚀",
-      html: `<p>Hey ${name}, we'll get back to you soon.</p>`,
+      html: `<p>Hey ${name}, We have got your request. We'll get back to you soon.</p>`,
     });
 
     return Response.json({ success: true });

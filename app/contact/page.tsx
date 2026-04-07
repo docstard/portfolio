@@ -55,15 +55,15 @@ const page = () => {
     async function onSubmit(data: z.infer<typeof formSchema>) {
         // Do something with the form values.
         // e.preventDefault();
-        console.log(data)
+        // console.log(data)
         await fetch("/api/contact", {
             method: "POST",
             body: JSON.stringify(data),
         });
-        alert("Message sent!");
+        // alert("Message sent!");
     }
 
-    console.log(form.watch());
+    // console.log(form.watch());
 
 
 
