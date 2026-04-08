@@ -1,0 +1,85 @@
+[
+    {
+        "id": "website-dev",
+        "card_logo": "language",
+        "title": "Website Development",
+        "description": "Custom high-performance, conversion-focused websites built with modern frameworks.",
+        "features": [
+            "Next.js / React builds",
+            "SEO optimized",
+            "Lightning fast performance",
+            "Responsive & scalable"
+        ]
+    },
+    {
+        "id": "saas-products",
+        "card_logo": "dashboard_customize",
+        "title": "SaaS and Web Apps",
+        "description": "Custom platforms built to handle real users, real data, and real growth.",
+        "features": [
+            "Dashboards & admin panels",
+            "Subscription systems",
+            "APIs & integrations",
+            "Scalable backend systems"
+        ]
+    },
+    {
+        "id": "ecommerce",
+        "card_logo": "shopping_bag",
+        "title": "eCommerce Solutions",
+        "description": "Modern online stores designed for performance and conversion.",
+        "features": [
+            "Custom storefronts",
+            "Checkout optimization",
+            "Payment integration",
+            "Inventory systems"
+        ]
+    },
+    {
+        "id": "ui-ux-design",
+        "card_logo": "draw",
+        "title": "UI/UX Design",
+        "description": "Design systems and interfaces focused on clarity, usability, and conversion.",
+        "features": [
+            "User flows and wireframing",
+            "Wireframes",
+            "High-fidelity UI",
+            "Design systems"
+        ]
+    },
+    {
+        "id": "ai-solutions",
+        "card_logo": "smart_toy",
+        "title": "AI Solutions",
+        "description": "We integrate AI into your business to automate, optimize, and scale operations.",
+        "features": [
+            "AI Chatbots (RAG-based)",
+            "Workflow automation",
+            "Document AI",
+            "Custom AI tools"
+        ]
+    },
+    {
+        "id": "workflow-automation",
+        "card_logo": "settings_suggest",
+        "title": "Workflow Automation & Internal Tools",
+        "description": "Reduce manual work with smart automation systems.",
+        "features": [
+            "CRM automation",
+            "Internal dashboards",
+            "API integrations",
+            "Data pipelines"
+        ]
+    },
+    {
+        "id": "support-maintenance",
+        "card_logo": "shield",
+        "title": "Long-term Support & Maintenance",
+        "description": "Ongoing support and maintenance to keep your systems running smoothly.",
+        "features": [
+            "24/7 Monitoring",
+            "Security Patches",
+            "Scaling Ops"
+        ]
+    }
+]

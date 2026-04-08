@@ -11,9 +11,9 @@ const buttonVariants = cva(
             variant: {
                 primary: "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 hover:scale-[1.05]",
                 secondary: "bg-white text-primary hover:bg-slate-100 shadow-xl hover:scale-[1.05]",
-                glass:"bg-[rgba(255,255,255,0.0.03)] border border-solid border-[rgba(255,255,255,0.1)] hover:bg-white/5 text-white",
+                glass: "bg-[rgba(255,255,255,0.03)] border border-solid border-[rgba(255,255,255,0.1)] hover:bg-white/5 text-white",
                 outline: "",
-                ghost: "",
+                ghost: "bg-primary text-white flex items-center gap-2 hover:scale-[1.02] transition-transform",
             },
             size: {
                 sm: "",
@@ -38,16 +38,16 @@ interface MainButtonProps extends ButtonProps {
 
 const Button = ({ className, variant, size, link, ...props }: MainButtonProps) => {
     const router = useRouter();
-    const onclickfunc = (link : string | undefined) => {
-        if(link) {
+    const onclickfunc = (link: string | undefined) => {
+        if (link) {
             router.push(link);
         }
     };
 
     return (
-        <button 
-        className={cn(buttonVariants({ variant, size, className }))}
-        onClick={()=>onclickfunc(link)}
+        <button
+            className={cn(buttonVariants({ variant, size, className }))}
+            onClick={() => onclickfunc(link)}
             {...props}
         />
     )

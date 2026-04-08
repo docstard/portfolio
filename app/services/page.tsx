@@ -1,135 +1,91 @@
-const servicesData = [
-    {
-        id: "website-dev",
-        card_logo: "language",
-        title: "Website Development",
-        description: "Custom high-speed websites optimized for conversion and brand impact.",
-        features: [
-            "Responsive Architecture",
-            "SEO Optimization",
-            "Core Web Vitals Ready",
-        ],
-    },
-    {
-        id: "saas-products",
-        card_logo: "dashboard_customize",
-        title: "SaaS Products",
-        description: "Custom software solutions tailored to your business needs.",
-        features: [
-            "Multi-tenant Systems",
-            "Subscription Engine",
-            "API Integration",
-        ],
-    },
-    {
-        id: "ecommerce",
-        card_logo: "shopping_bag",
-        title: "Premium eCommerce",
-        description: "Immersive online shopping experiences with frictionless checkout flows.",
-        features: [
-            "Custom Checkout",
-            "Inventory Automation",
-            "Global Payments",
-        ],
-    },
+import Button from "@/components/button";
+import serviceData from "@/data/serviceData.json";
 
-    {
-        id: "ui-ux-design",
-        card_logo: "draw",
-        title: "UI/UX Design",
-        description: "Modern user experiences built on deep research and psychological patterns.",
-        features: [
-            "User Journey Mapping",
-            "High-Fidelity Prototyping",
-            "Design Systems",
-        ],
-    },
-    {
-        id: "ai-solutions",
-        card_logo: "smart_toy",
-        title: "AI Solutions",
-        description: "Integrating Large Language Models and custom AI tools into your workflow.",
-        features: [
-            "Custom LLM Fine-tuning",
-            "Vector Databases",
-            "RAG Architectures",
-        ],
-    },
-    {
-        id: "workflow-automation",
-        card_logo: "settings_suggest",
-        title: "Workflow Automation",
-        description: "Reducing manual tasks through intelligent software and API bridges.",
-        features: [
-            "RPA Implementations",
-            "Low-code Integration",
-            "Data Pipelines",
-        ],
-    },
-    {
-        id: "support-maintenance",
-        card_logo: "shield",
-        title: "Long-term Support & Maintenance",
-        description: "Ongoing support and maintenance to keep your systems running smoothly.",
-        features: [
-            "24/7 Monitoring",
-            "Security Patches",
-            "Scaling Ops",
-        ],
-    },
-];
+// const servicesData = [
+//     {
+//         id: "website-dev",
+//         card_logo: "language",
+//         title: "Website Development",
+//         description: "Custom high-speed websites optimized for conversion and brand impact.",
+//         features: [
+//             "Responsive Architecture",
+//             "SEO Optimization",
+//             "Core Web Vitals Ready",
+//         ],
+//     },
+//     {
+//         id: "saas-products",
+//         card_logo: "dashboard_customize",
+//         title: "SaaS Products",
+//         description: "Custom software solutions tailored to your business needs.",
+//         features: [
+//             "Multi-tenant Systems",
+//             "Subscription Engine",
+//             "API Integration",
+//         ],
+//     },
+//     {
+//         id: "ecommerce",
+//         card_logo: "shopping_bag",
+//         title: "Premium eCommerce",
+//         description: "Immersive online shopping experiences with frictionless checkout flows.",
+//         features: [
+//             "Custom Checkout",
+//             "Inventory Automation",
+//             "Global Payments",
+//         ],
+//     },
+
+//     {
+//         id: "ui-ux-design",
+//         card_logo: "draw",
+//         title: "UI/UX Design",
+//         description: "Modern user experiences built on deep research and psychological patterns.",
+//         features: [
+//             "User Journey Mapping",
+//             "High-Fidelity Prototyping",
+//             "Design Systems",
+//         ],
+//     },
+//     {
+//         id: "ai-solutions",
+//         card_logo: "smart_toy",
+//         title: "AI Solutions",
+//         description: "Integrating Large Language Models and custom AI tools into your workflow.",
+//         features: [
+//             "Custom LLM Fine-tuning",
+//             "Vector Databases",
+//             "RAG Architectures",
+//         ],
+//     },
+//     {
+//         id: "workflow-automation",
+//         card_logo: "settings_suggest",
+//         title: "Workflow Automation",
+//         description: "Reducing manual tasks through intelligent software and API bridges.",
+//         features: [
+//             "RPA Implementations",
+//             "Low-code Integration",
+//             "Data Pipelines",
+//         ],
+//     },
+//     {
+//         id: "support-maintenance",
+//         card_logo: "shield",
+//         title: "Long-term Support & Maintenance",
+//         description: "Ongoing support and maintenance to keep your systems running smoothly.",
+//         features: [
+//             "24/7 Monitoring",
+//             "Security Patches",
+//             "Scaling Ops",
+//         ],
+//     },
+// ];
 
 
 export default function ServicesPage() {
     return (
         <main className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
-            {/* Top Navigation */}
-            {/* <header className="fixed top-0 w-full z-50 glass-card border-b border-white/5">
-                <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span className="material-symbols-outlined text-white text-xl">
-                                layers
-                            </span>
-                        </div>
-                        <span className="text-xl font-bold tracking-tight">Atticflow</span>
-                    </div>
-
-                    <nav className="hidden md:flex items-center gap-10">
-                        <a
-                            className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
-                            href="#"
-                        >
-                            Services
-                        </a>
-                        <a
-                            className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
-                            href="#"
-                        >
-                            AI Solutions
-                        </a>
-                        <a
-                            className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
-                            href="#"
-                        >
-                            Process
-                        </a>
-                        <a
-                            className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
-                            href="#"
-                        >
-                            FAQ
-                        </a>
-                    </nav>
-
-                    <div className="flex items-center gap-4">
-                        <button className="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-bold rounded-xl transition-all">
-                            Get Started
-                        </button>
-                    </div>
-                </div>
-            </header> */}
-
             {/* Hero Section */}
             <section className="relative pt-44 pb-24 hero-gradient">
                 <div className="max-w-7xl mx-auto px-6 text-center">
@@ -153,16 +109,16 @@ export default function ServicesPage() {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">
-                        <button className="px-8 py-4 bg-primary text-white font-bold rounded-xl flex items-center gap-2 hover:scale-[1.02] transition-transform">
+                        <Button variant={"ghost"} size={"lg"} link={"/contact"} >
                             Book a Consultation{" "}
                             <span className="material-symbols-outlined text-sm">
                                 arrow_forward
                             </span>
-                        </button>
+                        </Button>
 
-                        <button className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-colors">
+                        <Button className=" shadow-none" variant="glass" size={"md"}>
                             View Our Work
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -178,7 +134,7 @@ export default function ServicesPage() {
 
 
                     {/* Services */}
-                    {servicesData.map((service) => (
+                    {serviceData.map((service) => (
                         <div className="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
                             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
                                 <span className="material-symbols-outlined">{service.card_logo}</span>
@@ -192,15 +148,149 @@ export default function ServicesPage() {
                                     <li className="flex items-center gap-2">
                                         <span className="material-symbols-outlined text-primary text-sm">
                                             check_circle
-                                        </span>{" "}
+                                        </span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
                         </div>
                     ))}
+                </div>
+            </section>
 
+            {/* AI section */}
 
+            <section className="py-24 px-6 max-w-7xl mx-auto">
+                <div className="mb-16">
+                    <h2 className="text-3xl font-bold text-white mb-4">
+                        Core AI Capabilities
+                    </h2>
+                    <div
+                        className="h-1 w-20 bg-linear-to-r from-cyan-400 to-purple-500"
+                    ></div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    {/* <!-- Chatbots --> */}
+                    <div
+                        className="md:col-span-8 glass-card p-8 rounded-xl gradient-border group overflow-hidden relative"
+                    >
+                        <div className="relative z-10">
+                            <span
+                                className="material-symbols-outlined text-4xl text-cyan-400 mb-6"
+                                data-icon="smart_toy"
+                            >smart_toy</span
+                            >
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                                AI Customer Support Chatbots
+                            </h3>
+                            <p className="text-slate-400 max-w-md">
+                                Deploy sophisticated 24/7 automated support systems that resolve
+                                queries instantly across all your channels.
+                            </p>
+                        </div>
+                        <div
+                            className="absolute top-0 right-0 w-64 h-full opacity-10 group-hover:opacity-20 transition-opacity"
+                        >
+                            <img
+                                className="w-full h-full object-cover"
+                                data-alt="Abstract neural network visualization"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr6xvTImvkZpcXOfsKLAHGcNvvNbhK0UtCdSp2TclIRJa9-kXH4kNNuwL7IgxcAxzz7RBqp1m0XPMP-Fd_c6YhcjhSTDe5J1g-lIXGShAwK-pNY7KRWpG5qx_hWg6w5QLo6nJ4PX0LP_CReIfyj1KB6zqy5vzUuMeThQuzd90BwRRexDyxJqjO7sjA_86xVzgFmWs2H3bhfFGn4aHwOn_S7H5KhryHntXTAe-wCWTG-MLP-6IhjpNC12Bl27boS9jWXjf60Iiygxn2"
+                            />
+                        </div>
+                    </div>
+                    {/* <!-- Custom GPT --> */}
+                    <div className="md:col-span-4 glass-card p-8 rounded-xl gradient-border">
+                        <span
+                            className="material-symbols-outlined text-4xl text-purple-400 mb-6"
+                            data-icon="psychology"
+                        >psychology</span
+                        >
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                            Custom GPT Assistants
+                        </h3>
+                        <p className="text-slate-400">
+                            Trained on internal company data for secure, specialized
+                            expertise.
+                        </p>
+                    </div>
+                    {/* <!-- Document AI --> */}
+                    <div className="md:col-span-4 glass-card p-8 rounded-xl gradient-border">
+                        <span
+                            className="material-symbols-outlined text-4xl text-cyan-400 mb-6"
+                            data-icon="description"
+                        >description</span
+                        >
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                            Document AI &amp; Extraction
+                        </h3>
+                        <p className="text-slate-400">
+                            Automated data entry from complex PDFs, invoices, and contracts
+                            with high accuracy.
+                        </p>
+                    </div>
+                    {/* <!-- Business Analytics --> */}
+                    <div
+                        className="md:col-span-4 glass-card p-8 rounded-xl gradient-border bg-gradient-to-br from-slate-900 to-blue-900/20"
+                    >
+                        <span
+                            className="material-symbols-outlined text-4xl text-blue-400 mb-6"
+                            data-icon="analytics"
+                            data-weight="fill"
+                            // style={{ fontVariationSettings: "'FILL' 1" }}
+                        >analytics</span
+                        >
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                            AI Business Analytics
+                        </h3>
+                        <p className="text-slate-400">
+                            Unlock predictive insights and real-time data visualization for
+                            smarter decisions.
+                        </p>
+                    </div>
+                    {/* <!-- Content Generation --> */}
+                    <div className="md:col-span-4 glass-card p-8 rounded-xl gradient-border">
+                        <span
+                            className="material-symbols-outlined text-4xl text-purple-400 mb-6"
+                            data-icon="edit_note"
+                        >edit_note</span
+                        >
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                            AI Content Generation
+                        </h3>
+                        <p className="text-slate-400">
+                            Scalable automated marketing copy and product descriptions that
+                            sound human.
+                        </p>
+                    </div>
+                    {/* <!-- AI Search --> */}
+                    <div
+                        className="md:col-span-12 glass-card p-8 rounded-xl gradient-border flex flex-col md:flex-row gap-8 items-center"
+                    >
+                        <div className="flex-1">
+                            <span
+                                className="material-symbols-outlined text-4xl text-cyan-400 mb-6"
+                                data-icon="search_insights"
+                            >search_insights</span
+                            >
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                                AI Search Systems (RAG)
+                            </h3>
+                            <p className="text-slate-400 text-lg">
+                                Retrieval-Augmented Generation systems that allow your team to
+                                talk to your internal knowledge base and get sourced answers
+                                instantly.
+                            </p>
+                        </div>
+                        <div
+                            className="w-full md:w-1/3 aspect-video rounded-lg overflow-hidden border border-white/10"
+                        >
+                            <img
+                                className="w-full h-full object-cover"
+                                data-alt="Digital interface showing semantic search results"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VEmfam1VchK4msWWOOB16gbKsxhgi8jpB-PM3Uywty7VcKjnHo5e-YPQJKFLUqd0mCvwnDR9hSwJf1LFoPFDBTsddfUk75TboLk5ugUWRE5JPUKfo2wboyfFOhfEA96DCKhYlIsHnpwazc5K271IadElNY0nnMYftQDdtVcQvyrPoBwouy7i-u6kXA5gZEXr1KeNeTCBvlZdWmyzHx3lIgio54Ub9GlB_LTiQJu1xtHqnjoG8fAR_oTD-DWew_TyaMaBiDPZayhA"
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -290,8 +380,8 @@ export default function ServicesPage() {
                             "Tailwind",
                         ].map((tech) => (
                             <div key={tech} className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded bg-white/5 border border-white/10">
-                                    <span className="material-symbols-outlined items-center justify-center align-middle self-center">
+                                <div className="w-8 h-8 rounded bg-white/5 border border-white/10 items-center justify-center flex">
+                                    <span className="material-symbols-outlined">
                                         code
                                     </span>
                                 </div>
@@ -416,146 +506,26 @@ export default function ServicesPage() {
 
             {/* Final CTA */}
             <section className="py-24 px-6">
-                <div className="max-w-7xl mx-auto rounded-[2.5rem] p-12 md:p-24 relative overflow-hidden text-center bg-primary">
+                <div className="max-w-7xl mx-auto rounded-[2.5rem] p-12 md:p-24 relative overflow-hidden text-center bg-primary/20">
                     <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
                     <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
 
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-8 relative z-10">
-                        Ready to build the future?
+                        Ready to build the future and Automate Your Business?
                     </h2>
 
                     <p className="text-white/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto relative z-10">
-                        Join 50+ companies already scaling with our premium digital
+                        Join the forward-thinking companies leveraging Atticflow to stay ahead of the curve with our premium digital
                         solutions and AI workflows.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 relative z-10">
-                        <button className="px-10 py-5 bg-white text-primary font-bold rounded-2xl hover:bg-slate-100 transition-colors shadow-xl">
+                        <Button size={"lg"} variant={"secondary"} link="/contact">
                             Book a Free Consultation
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </section>
-
-            {/* Footer */}
-            <footer className="py-16 border-t border-white/5 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-                    <div className="col-span-1 md:col-span-1">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                                <span className="material-symbols-outlined text-white text-xl">
-                                    layers
-                                </span>
-                            </div>
-                            <span className="text-xl font-bold tracking-tight">
-                                Atticflow
-                            </span>
-                        </div>
-
-                        <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                            Premium digital product studio and AI agency architecting
-                            high-performance solutions.
-                        </p>
-
-                        <div className="flex gap-4">
-                            <a
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
-                                href="#"
-                            >
-                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                                </svg>
-                            </a>
-
-                            <a
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
-                                href="#"
-                            >
-                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h5 className="font-bold mb-6">Services</h5>
-                        <ul className="space-y-4 text-slate-500 text-sm">
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Website Development
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    SaaS Products
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    AI Solutions
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    UI/UX Design
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h5 className="font-bold mb-6">Company</h5>
-                        <ul className="space-y-4 text-slate-500 text-sm">
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Careers
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Case Studies
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h5 className="font-bold mb-6">Legal</h5>
-                        <ul className="space-y-4 text-slate-500 text-sm">
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Terms of Service
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-primary" href="#">
-                                    Cookie Policy
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-slate-600 text-xs">
-                    © 2024 Atticflow Studio. All rights reserved.
-                </div>
-            </footer>
         </main>
     );
 }

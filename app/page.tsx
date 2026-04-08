@@ -32,13 +32,13 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <Button variant={"primary"} size={"md"}>
+            <Button variant={"primary"} size={"md"} link="/contact">
               Start Your Project
             </Button>
 
 
             <Button variant={"glass"} size={"md"} link={"/portfolio"} >
-              View Portfolio
+              View Work
             </Button>
 
           </div>
@@ -474,12 +474,12 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant={"secondary"} size={"lg"} link={"/contactUs"} >
+                <Button variant={"secondary"} size={"lg"} link={"/contact"} >
                   Book Your Free Audit
                 </Button>
 
-                <Button variant={"glass"} size={"lg"} link={"/contactUs"} >
-                  Contact Us
+                <Button variant={"glass"} size={"lg"} link={"/portfolio"} >
+                  View Portfolio
                 </Button>
               </div>
             </div>
