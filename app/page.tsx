@@ -1,11 +1,14 @@
+"use client";
 import Button from "@/components/button"
 import serviceData from "../data/serviceData.json"
 import projectData from "../data/projectData.json"
 import ProcessSteps from "@/components/processSteps";
 import Link from "next/link";
 import TechStack from "@/components/techStack";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const router = useRouter();
   return (
     <main className="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-x-hidden">
       {/* Navbar */}
@@ -238,7 +241,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projectData.slice(0, 2).map((project) => (
-              <div className="group cursor-pointer">
+              <div onClick={() => router.push(`/portfolio/${project.id}`)} className="group cursor-pointer">
                 <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-800">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

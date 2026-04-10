@@ -186,7 +186,7 @@ export default function PortfolioPage() {
                                         <div className="absolute inset-0 bg-linear-to-t from-charcoal to-transparent opacity-60"></div>
 
                                         <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                                            {project.tags.map((tag) => (
+                                            {project.categories.map((tag) => (
                                                 <span
                                                     key={tag}
                                                     className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md rounded border border-white/20 text-white"
