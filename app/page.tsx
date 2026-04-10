@@ -1,4 +1,9 @@
 import Button from "@/components/button"
+import serviceData from "../data/serviceData.json"
+import projectData from "../data/projectData.json"
+import ProcessSteps from "@/components/processSteps";
+import Link from "next/link";
+import TechStack from "@/components/techStack";
 
 export default function HomePage() {
   return (
@@ -109,49 +114,17 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
-              <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
-                draw
-              </span>
-              <h4 className="text-xl font-bold mb-3">Web Design</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Sleek, conversion-optimized interfaces that capture attention
-                and drive user engagement.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
-              <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
-                code_blocks
-              </span>
-              <h4 className="text-xl font-bold mb-3">Custom Web Apps</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Complex SaaS platforms and internal tools built with React,
-                Next.js and robust backends.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
-              <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
-                smart_toy
-              </span>
-              <h4 className="text-xl font-bold mb-3">AI Automation</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Smart workflows and autonomous agents to save your team hundreds
-                of operational hours.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
-              <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
-                description
-              </span>
-              <h4 className="text-xl font-bold mb-3">Document AI</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Automated data extraction and intelligent analysis of complex
-                legal and medical documents.
-              </p>
-            </div>
+            {serviceData.slice(0, 4).map((service) => (
+              <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
+                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
+                  {service.card_logo}
+                </span>
+                <h4 className="text-xl font-bold mb-3">{service.title}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -170,7 +143,7 @@ export default function HomePage() {
               </h3>
 
               <ul className="space-y-6">
-                <li className="flex gap-4">
+                <li className="flex gap-4 items-center align-middle">
                   <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded">
                     check
                   </span>
@@ -183,7 +156,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="flex gap-4">
+                <li className="flex gap-4 items-center align-middle">
                   <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded">
                     check
                   </span>
@@ -198,7 +171,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="flex gap-4">
+                <li className="flex gap-4 items-center align-middle">
                   <span className="material-symbols-outlined text-primary bg-primary/10 p-1 rounded">
                     check
                   </span>
@@ -242,162 +215,61 @@ export default function HomePage() {
       {/* Portfolio Section */}
       <section className="py-24" id="portfolio">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
+          <div className="flex justify-between items-center md:items-end mb-16">
             <div>
-              <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
+              <h2 className="text-primary font-bold tracking-widest uppercase text-4xl md:text-sm mb-4">
                 Work
               </h2>
-              <h3 className="text-4xl font-bold text-white">
+              <h3 className="text-4xl hidden md:flex font-bold text-white">
                 Selected Projects
               </h3>
             </div>
 
-            <a
+            <Link
               className="text-slate-400 hover:text-white flex items-center gap-2 group"
-              href="#"
+              href="/portfolio"
             >
               View all projects{" "}
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
                 arrow_forward
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group cursor-pointer">
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-800">
-                <img
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  alt="Go-Solo Platform"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDs6j6wE34yTyUyhchV-wYeYTixLPcq1W8pGUrdsr9K2IR5dZNhDiMdzfaVVx6iaUgXSNNFM1tEHo90p8rYWP4doGKeIwJJh-AkZGn9hbArYxAvVgoILQTnJgsi74LQCJ8wucq_DIyjhiGfz7lOwOmeGP881SoxGdjxQdmMZWXz089NXnA-ujlxS8u9coSVXl2FBQ3w3uNaHZY1rA52_H3gkXlAVRLZ8llu1Ksd7UOiEn8Ikjff-xRyGErogi_0W6s980IrGlc-Mb"
-                />
+            {projectData.slice(0, 2).map((project) => (
+              <div className="group cursor-pointer">
+                <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-800">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={project.id}
+                    src={project.mainImage}
+                  />
 
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="px-3 py-1 glass-card rounded-full text-xs font-bold">
-                    Fintech
-                  </span>
-                  <span className="px-3 py-1 glass-card rounded-full text-xs font-bold">
-                    AI Integration
-                  </span>
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    {project.categories.slice(0, 2).map((tag) => (
+                      <span className="px-3 py-1 glass-card rounded-full text-xs font-bold">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                <h4 className="text-2xl font-bold mb-2">{project.title}</h4>
+                <p className="text-slate-400">
+                  {project.description}
+                </p>
               </div>
-
-              <h4 className="text-2xl font-bold mb-2">Go-Solo Platform</h4>
-              <p className="text-slate-400">
-                All-in-one financial dashboard for solopreneurs with automated
-                expense tagging.
-              </p>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-800">
-                <img
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  alt="Insight Flow"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_FXd0ulUN2DlDUmWAqTcymGz9F5UHd11l8ZUS1LXW6h_R5dLL5Oc1G158o2ExDMgxCyAqqY8Bmq243rvuBk01P7yo-PUayPTyGzYaMoY74AV-LARNqJcowgZwLmk6PPeCzgIw65w_lnFhk1AmIvEyRFidE9IXFpgYya6p2esA-VdDgovGGqmhllsfYS5eALiEnPDJoCO83Y8bIDw2Ns3cAJ6-ngLttXPGcrAPVVH7iDSLOtVZy-Au41Oyjp2dlK6b-CbY26s-7r4D"
-                />
-
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="px-3 py-1 glass-card rounded-full text-xs font-bold">
-                    SaaS
-                  </span>
-                  <span className="px-3 py-1 glass-card rounded-full text-xs font-bold">
-                    Data Viz
-                  </span>
-                </div>
-              </div>
-
-              <h4 className="text-2xl font-bold mb-2">Insight Flow</h4>
-              <p className="text-slate-400">
-                Predictive analytics dashboard helping enterprise retailers
-                forecast seasonal inventory.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-white/5 relative" id="process">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
-              Our Method
-            </h2>
-            <h3 className="text-4xl font-bold text-white">
-              How we bring ideas to life
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-            <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-linear-to-r from-transparent via-primary/30 to-transparent z-0"></div>
-
-            {[
-              {
-                num: "01",
-                title: "Discovery",
-                desc: "Deep diving into your business goals and user needs.",
-              },
-              {
-                num: "02",
-                title: "Strategy",
-                desc: "Defining the tech stack and product roadmap.",
-              },
-              {
-                num: "03",
-                title: "Design",
-                desc: "Crafting intuitive and high-converting UI/UX.",
-              },
-              {
-                num: "04",
-                title: "Development",
-                desc: "Agile sprints using modern, scalable frameworks.",
-              },
-              {
-                num: "05",
-                title: "Launch",
-                desc: "Quality assurance and seamless deployment.",
-              },
-            ].map((step) => (
-              <div key={step.num} className="relative z-10 text-center">
-                <div className="size-20 bg-background-dark border-2 border-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 glass-card">
-                  <span className="text-2xl font-black text-primary">
-                    {step.num}
-                  </span>
-                </div>
-
-                <h4 className="font-bold mb-2">{step.title}</h4>
-                <p className="text-sm text-slate-400">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSteps mainHeading="Our Method" subHeading="How we bring ideas to life" variant="light" />
 
       {/* Tech Stack */}
-      <section className="py-24 overflow-hidden border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-slate-500 font-medium mb-12 uppercase tracking-widest text-xs">
-            The Tech Behind Our Success
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-            {[
-              "Next.js",
-              "React",
-              "OpenAI",
-              "Node.js",
-              "PostgreSQL",
-              "Stripe",
-              "Tailwind",
-            ].map((tech) => (
-              <span key={tech} className="text-2xl font-bold">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechStack heading="Our Tech Stack" />
 
       {/* Testimonials */}
       <section className="py-24">

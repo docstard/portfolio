@@ -16,7 +16,7 @@ const buttonVariants = cva(
                 ghost: "bg-primary text-white flex items-center gap-2 hover:scale-[1.02] transition-transform",
             },
             size: {
-                sm: "",
+                sm: "px-6 py-2.5",
                 md: "px-8 py-4",
                 lg: "px-10 py-5",
             },

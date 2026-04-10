@@ -1,6 +1,14 @@
+"use client";
+
 import ProjectGallery from "@/components/ProjectGallery"
+import projectData from "../../../data/projectData.json";
+import { usePathname } from "next/navigation";
 
 export default function ProjectDetailPage() {
+    const pathname = usePathname();
+    const projectId = pathname.split("/").pop();
+    const project = projectData.find((p) => p.id === projectId);
+    
     const galleryImages = [
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
         "https://images.unsplash.com/photo-1556761175-4b46a572b786",
@@ -22,21 +30,20 @@ export default function ProjectDetailPage() {
                         <nav className="flex items-center gap-2 mb-8 text-sm text-slate-500">
                             <a href="/portfolio" className="hover:text-white">Projects</a>
                             <span className="material-icons text-xs">chevron_right</span>
-                            <span className="text-primary">Lumina AI</span>
+                            <span className="text-primary">{project?.title}</span>
                         </nav>
 
                         <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight text-white mb-8">
-                            Lumina <br />
-                            <span className="gradient-text">AI Chatbot.</span>
+                            {project?.title} <br />
+                            {/* <span className="gradient-text">{project?.subtitle}</span> */}
                         </h1>
 
                         <p className="text-xl md:text-2xl text-slate-400 mb-10">
-                            An intelligent customer support agent handling 95% of queries with
-                            natural language understanding and real-time learning.
+                            {project?.description}
                         </p>
 
                         <div className="flex flex-wrap gap-3">
-                            {["OpenAI API", "React", "Node.js", "MongoDB"].map(tag => (
+                            {project?.tags.map((tag) => (
                                 <span
                                     key={tag}
                                     className="px-4 py-2 text-xs font-bold tracking-widest uppercase bg-white/5 border border-white/10 rounded-full text-slate-300"
@@ -51,8 +58,8 @@ export default function ProjectDetailPage() {
                         <div className="absolute -inset-4 bg-linear-to-r from-accent-cyan/20 to-accent-purple/20 blur-2xl rounded-4xl opacity-50" />
                         <div className="relative rounded-2xl overflow-hidden glass-card aspect-4/3">
                             <img
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5tC7yBeIGWvc-ndUWTctl7rqJk9pPYKL47AlKNlq_k4NQT7Oep3tswC_NCZO3xnqeIs_zAjpfJXsEDtM3KiyjHXQlHp4hio__RF0qSFlfLmWvDui3yP8lPRc-vabY89GNvTeVr0ZpeKt9wuRaoxLH7i-tbliy-3L_zgZ6iXyugEO5_axpBst0aN3wEyZhAVig_tUqepUXphUwaOMgbJx6yytDSSPY8ABCUCXyxHKgKLbVV54Opwp7ZiMAeYFaY5uu8Rda5JQbVyn"
-                                alt="Lumina Interface"
+                                src={project?.mainImage}
+                                alt={project?.id}
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -68,17 +75,13 @@ export default function ProjectDetailPage() {
                             Overview
                         </h2>
                         <h3 className="text-3xl font-bold text-white mb-6">
-                            Redefining automated support through advanced LLM integration.
+                            {project?.overview.Heading}
                         </h3>
                         <div className="space-y-6 text-slate-400 text-lg">
-                            <p>
-                                Lumina was conceived to bridge the gap between static FAQ bots and
-                                human-level empathy.
-                            </p>
-                            <p>
-                                The system integrates real-time account data and resolves complex
-                                issues without human intervention.
-                            </p>
+                            {project?.overview.text.map((paragraph, idx) => (
+                                <p key={idx}>{paragraph}</p>
+                            ))}
+                           
                         </div>
                     </div>
 
@@ -132,8 +135,7 @@ export default function ProjectDetailPage() {
                                 </h2>
                             </div>
                             <p className="text-lg text-slate-400">
-                                80% of tickets were repetitive, causing 24-hour delays and poor
-                                customer satisfaction.
+                                {project?.challenges}
                             </p>
                         </div>
                     </div>
@@ -153,23 +155,20 @@ export default function ProjectDetailPage() {
                             <ul className="space-y-4">
                                 <li className="flex gap-3">
                                     <span className="material-icons text-primary">check_circle</span>
-                                    Semantic Search
+                                    {project?.solution}
                                 </li>
-                                <li className="flex gap-3">
-                                    <span className="material-icons text-primary">check_circle</span>
-                                    Context Awareness
-                                </li>
+                                
                             </ul>
                         </div>
 
                         <div className="glass-card rounded-2xl p-8 bg-primary/5">
                             <pre className="text-xs text-accent-cyan font-mono overflow-x-auto">
                                 {`{
-                                    "agent": "Lumina-v2",
-                                    "task": "Resolve Billing Conflict",
-                                    "status": "Processing",
+                                    "agent": ${project?.title} Agent,
+                                    "task": "Handle customer support tickets with AI",
+                                    "status": ${project?.status},
                                     "confidence_score": 0.98
-                                    }`
+}`
                                 }
                             </pre>
                         </div>
@@ -186,16 +185,11 @@ export default function ProjectDetailPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {[
-                        "Natural Language Processing",
-                        "CRM Integration",
-                        "Automated Ticketing",
-                        "24/7 Availability",
-                    ].map(feature => (
-                        <div key={feature} className="glass-card p-8 rounded-2xl">
-                            <h4 className="font-bold text-white mb-3">{feature}</h4>
+                    {project?.features.map((feature, index) => (
+                        <div key={index} className="glass-card p-8 rounded-2xl">
+                            <h4 className="font-bold text-white mb-3">{feature.title}</h4>
                             <p className="text-sm text-slate-500">
-                                Built for scale, reliability, and intelligence.
+                                {feature.description}
                             </p>
                         </div>
                     ))}

@@ -1,4 +1,6 @@
 import Button from "@/components/button";
+import ProcessSteps from "@/components/processSteps";
+import TechStack from "@/components/techStack";
 import serviceData from "@/data/serviceData.json";
 
 // const servicesData = [
@@ -236,7 +238,7 @@ export default function ServicesPage() {
                             className="material-symbols-outlined text-4xl text-blue-400 mb-6"
                             data-icon="analytics"
                             data-weight="fill"
-                            // style={{ fontVariationSettings: "'FILL' 1" }}
+                        // style={{ fontVariationSettings: "'FILL' 1" }}
                         >analytics</span
                         >
                         <h3 className="text-2xl font-bold text-white mb-3">
@@ -295,7 +297,7 @@ export default function ServicesPage() {
             </section>
 
             {/* AI Specific Use Cases */}
-            <section className="py-24 bg-white/[0.02]">
+            <section className="py-24 bg-white/2">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-black mb-4">
@@ -364,36 +366,10 @@ export default function ServicesPage() {
             </section>
 
             {/* Tech Stack */}
-            <section className="py-24 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h3 className="text-center text-slate-500 font-bold uppercase tracking-[0.2em] text-xs mb-12">
-                        Our Technology Stack
-                    </h3>
-
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-                        {[
-                            "React",
-                            "Next.js",
-                            "Node.js",
-                            "OpenAI",
-                            "TypeScript",
-                            "Tailwind",
-                        ].map((tech) => (
-                            <div key={tech} className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded bg-white/5 border border-white/10 items-center justify-center flex">
-                                    <span className="material-symbols-outlined">
-                                        code
-                                    </span>
-                                </div>
-                                <span className="font-bold">{tech}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <TechStack />
 
             {/* Process Timeline */}
-            <section className="py-24 max-w-7xl mx-auto px-6">
+            <section className="py-24 mx-auto  px-6">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl md:text-4xl font-black mb-4">Our Process</h2>
                     <p className="text-slate-400">
@@ -402,7 +378,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
-                    <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-white/5 z-0"></div>
+                    <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent z-0"></div>
 
                     {[
                         {
@@ -434,10 +410,8 @@ export default function ServicesPage() {
                     ].map((item) => (
                         <div key={item.step} className="relative z-10 text-center">
                             <div
-                                className={`w-24 h-24 rounded-full bg-background-dark border-4 mx-auto flex items-center justify-center mb-6 transition-colors ${item.highlight
-                                    ? "border-primary shadow-[0_0_20px_rgba(75,43,238,0.3)]"
-                                    : "border-white/5 hover:border-primary/50"
-                                    }`}
+                                className={`size-24 rounded-full bg-background-dark border-4 mx-auto flex items-center justify-center mb-6 transition-colors
+                                     `}
                             >
                                 <span className="text-2xl font-black">{item.step}</span>
                             </div>
@@ -448,6 +422,7 @@ export default function ServicesPage() {
                     ))}
                 </div>
             </section>
+            {/* <ProcessSteps mainHeading="Our Process" subHeading="From concept to deployment in 5 structured phases." variant="dark" /> */}
 
             {/* FAQ Section */}
             <section className="py-24 max-w-3xl mx-auto px-6">

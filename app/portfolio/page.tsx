@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import projectData from "../../data/projectData.json";
 
 const FILTERS = [
     { label: "All Projects", value: "all" },
@@ -92,8 +93,8 @@ export default function PortfolioPage() {
     const router = useRouter();
 
     const filteredProjects = useMemo(() => {
-        if (activeFilter === "all") return PROJECTS;
-        return PROJECTS.filter((project) =>
+        if (activeFilter === "all") return projectData;
+        return projectData.filter((project) =>
             project.categories.includes(activeFilter)
         );
     }, [activeFilter]);
@@ -179,7 +180,7 @@ export default function PortfolioPage() {
                                         <img
                                             alt={project.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                            src={project.image}
+                                            src={project.mainImage}
                                         />
 
                                         <div className="absolute inset-0 bg-linear-to-t from-charcoal to-transparent opacity-60"></div>
@@ -207,7 +208,7 @@ export default function PortfolioPage() {
 
                                         <a
                                             className="inline-flex items-center gap-2 text-sm font-bold text-primary"
-                                            href={project.link}
+                                            href={project.github}
                                         >
                                             View Project{" "}
                                             <span className="material-icons text-sm">
