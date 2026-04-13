@@ -27,6 +27,16 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
+import { useRouter } from "next/navigation"
+
+import {
+    Alert,
+    AlertAction,
+    AlertDescription,
+    AlertTitle,
+} from "@/components/ui/alert"
+import { tr } from "zod/locales"
+import { useState } from "react"
 
 
 const formSchema = z.object({
@@ -39,6 +49,11 @@ const formSchema = z.object({
 });
 
 const page = () => {
+
+    const [showSuccess, setShowSuccess] = useState(false)
+
+    const router = useRouter()
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         mode: "onBlur",
@@ -56,10 +71,28 @@ const page = () => {
         // Do something with the form values.
         // e.preventDefault();
         // console.log(data)
-        await fetch("/api/contact", {
-            method: "POST",
-            body: JSON.stringify(data),
-        });
+        try {
+
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                body: JSON.stringify(data),
+            });
+            if (response.ok) {
+                // 3. Trigger the alert
+                setShowSuccess(true)
+
+                // 4. Redirect after 5 seconds
+                setTimeout(() => {
+                    router.push("/")
+                }, 5000)
+            }
+           
+            
+        } catch {
+            console.error("Submition Failed")
+        }
+
+
         // alert("Message sent!");
     }
 
@@ -69,6 +102,17 @@ const page = () => {
 
     return (
         <main className="pt-32 pb-20  overflow-hidden">
+            {showSuccess && (
+                <div className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-full max-w-md animate-in fade-in slide-in-from-top-4">
+                    <Alert className="bg-slate-900 border-cyan-500 text-white shadow-2xl">
+                        <AlertTitle className="text-cyan-400 font-bold">Message Sent!</AlertTitle>
+                        <AlertDescription>
+                            Thank you for reaching out. We'll get back to you shortly. 
+                            Redirecting you to the home page in 5 seconds...
+                        </AlertDescription>
+                    </Alert>
+                </div>
+            )}
             {/* <!-- Ambient Background Accents --> */}
             <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
                 <div
