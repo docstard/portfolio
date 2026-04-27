@@ -1,3 +1,4 @@
+import Button from '@/components/button'
 import React from 'react'
 
 const page = () => {
@@ -367,7 +368,7 @@ const page = () => {
             {/* <!-- Final CTA --> */}
             <section className="py-24 px-6 relative overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-purple-500/10"
+                    className="absolute inset-0 bg-linear-to-b from-transparent via-blue-500/5 to-purple-500/10"
                 ></div>
                 <div
                     className="max-w-4xl mx-auto glass-card p-12 md:p-20 rounded-[2rem] text-center border-white/5 relative z-10"
@@ -378,16 +379,16 @@ const page = () => {
                         Ready to Innovate?
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            className="bg-cyan-400 text-slate-950 px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan-300 transition-all duration-300 active:opacity-80 active:scale-95"
+                        <Button link='/contact'
+                            className="bg-cyan-400 shadow-none text-slate-950 px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan-300 transition-all duration-300 active:opacity-80 active:scale-95"
                         >
                             Book a Consultation
-                        </button>
-                        <button
-                            className="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+                        </Button>
+                        <Button link='/portfolio'
+                            className="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 shadow-none"
                         >
                             View Our Work
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </section>

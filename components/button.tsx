@@ -5,7 +5,7 @@ import { cn } from "../lib/utils";
 import { useRouter } from 'next/navigation';
 
 const buttonVariants = cva(
-    "w-full sm:w-auto rounded-xl font-bold text-lg transition-all",
+    "w-auto rounded-xl font-bold text-lg transition-all",
     {
         variants: {
             variant: {
@@ -13,7 +13,7 @@ const buttonVariants = cva(
                 secondary: "bg-white text-primary hover:bg-slate-100 shadow-xl hover:scale-[1.05]",
                 glass: "bg-[rgba(255,255,255,0.03)] border border-solid border-[rgba(255,255,255,0.1)] hover:bg-white/5 text-white",
                 outline: "",
-                ghost: "bg-primary text-white flex items-center gap-2 hover:scale-[1.02] transition-transform",
+                ghost: "bg-primary text-white flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform",
             },
             size: {
                 sm: "px-6 py-2.5",

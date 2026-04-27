@@ -7,11 +7,6 @@ import LenisScrollProvider from "./providers/lenis-provider";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
-// export const metadata = {
-//   title: "Atticflow Agency | Digital Product & AI Studio",
-//   description: "Premium digital product studio and AI agency delivering scalable solutions.",
-// };
-
 export const metadata = {
   metadataBase: new URL("https://atticflow.com"),
   title: {

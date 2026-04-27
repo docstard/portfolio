@@ -1,26 +1,36 @@
 
 import Button from "@/components/button"
 import serviceData from "../data/serviceData.json"
-import projectData from "../data/projectData.json"
+import projectData from "../data/projectData"
 import ProcessSteps from "@/components/processSteps";
 import Link from "next/link";
 import TechStack from "@/components/techStack";
 import ProjectCard from "@/components/projectCard";
+import ServiceCard from "@/components/serviceCard";
+import MainPageServiceSection from "@/components/mainPageServiceSection";
 
 
-
+export const metadata = {
+  title: "Atticflow | Web Development & AI Solutions",
+  description:
+    "Atticflow builds websites, SaaS products and AI systems that scale.",
+};
 export default function HomePage() {
 
+
+
+
+
   return (
-    <main className="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-x-hidden">
+    <main className="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100  ">
       {/* Navbar */}
 
       {/* Hero Section */}
-      <section className="relative pt-44 pb-24 overflow-hidden">
+      <section className="relative pt-24 md:pt-44 pb-24 overflow-hidden">
         <div className="glow-orb top-20 -left-20"></div>
         <div className="glow-orb bottom-0 -right-20 opacity-50"></div>
 
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border border-primary/20">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -35,7 +45,7 @@ export default function HomePage() {
             Building Modern Websites, Web Apps & AI Solutions That Scale
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-justify text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
             Premium digital product studio and AI agency delivering
             high-performance scalable solutions for ambitious startups and
             enterprises.
@@ -54,7 +64,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero Feature Cards */}
-          <div className=" grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className=" grid grid-cols-1 md:grid-cols-3 gap-6  max-w-5xl mx-auto">
             <div className="glass-card p-6 rounded-xl text-left flex items-start gap-4">
               <div className="p-3 bg-primary/10 rounded-lg">
                 <span className="material-symbols-outlined text-primary">
@@ -117,20 +127,9 @@ export default function HomePage() {
               transform your business operations and customer experience.
             </p>
           </div>
+          
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceData.slice(0, 4).map((service) => (
-              <div className="p-8 rounded-2xl glass-card border-transparent hover:border-primary/40 transition-all group">
-                <span className="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform block">
-                  {service.card_logo}
-                </span>
-                <h4 className="text-xl font-bold mb-3">{service.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MainPageServiceSection serviceData={serviceData} />
         </div>
       </section>
 

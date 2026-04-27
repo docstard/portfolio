@@ -130,5 +130,77 @@
             "https://lh3.googleusercontent.com/aida-public/AB6AXuBM4rtPJ257oCl_6wudOgeMQGHG14QtuCMnAsjF2n3auotYl_pJaW7TDSoesPrB7KzzjFz0DE5UbV19tkqdB0iEs62ZHAQrsV6lZGb3RtNplGBmMKZsf8_bNJ_6haVSRThhSXEO_38yf3fU5uJyycBaN6KO7aklC2xLmSydjS9YfgL0tR7ubcZhYMO69OzTpO_FsMhkEcRY3NX1nw46fRR5lJvTRPMhYv1JmkZqHxrRqLZhoqiydhJNcne4Rmd-4LUtSCHHKg6p47Y"
         ],
         "status": "In Progress"
+    },
+    {
+        "id": "proism",
+        "title": "Proism - AI-Powered Career Optimization Platform",
+        "description": "An intelligent job-matching and resume-analysis platform leveraging Machine Learning, NLP, and front-end technologies to streamline the recruitment process for both candidates and employers.",
+        "mainImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCNgN7tCYeBEx5KOZsD0Lhc5UYXX4LdhLcGHgnGBiEtbzZh817YPD0mgqOTlrrV_ek5pXsbQl4P-fyQopFNd9Tq7yCFcqlIDNYTAXL9-R1eWUd16VsBRm99YU048MzV2qmXzAj8nhcwxKtckLzPlVsdEGaMo9xiZWpapOPdXIRU3qV3fawawZJsWm1F6KLBrZC-pgjW4W7wYaO3o1UvWFIV_Nnh_Q1nrHM00dp514dxBRyRrUOu0gdXrPM0SHH4LyWavtD9TQ9_-N4",
+        "tags": [
+            "Next.js",
+            "Prisma",
+            "PostgreSQL",
+            "Clerk Auth",
+            "Tailwind CSS",
+            "EdTech",
+            "Full Stack"
+        ],
+        "languages": [
+            "TypeScript",
+            "JavaScript"
+        ],
+        "challenges": "Designing a scalable test engine that supports both MCQ and descriptive questions with separate timers, multi-attempt handling, and real-time state persistence. Managing complex Prisma schema migrations, relational consistency, and performance while ensuring seamless UX across long test sessions was a key challenge.",
+        "solution": "Built a modular test architecture separating MCQ and descriptive flows with independent timers and submission pipelines. Implemented robust backend APIs with Prisma relations for attempts, answers, and results. Optimized database queries, handled migrations carefully, and ensured smooth frontend state management with persistent test progress.",
+        "overview": {
+            "Heading": "Building a Scalable EdTech Platform for Law Aspirants",
+            "text": [
+                "The Legal Ladder is a comprehensive EdTech platform designed for judiciary and law entrance preparation.",
+                "It includes structured courses, dynamic test series, and a powerful test engine supporting both MCQ and descriptive formats.",
+                "The platform focuses on performance analytics, personalized learning, and real-world exam simulation.",
+                "It also introduces advanced features like custom test package creation, teacher evaluation workflows, and monetized descriptive answer checking."
+            ]
+        },
+        "stats": {
+            "Tests Supported": "500+",
+            "Question Capacity": "10K+",
+            "Modules Built": "15+"
+        },
+        "features": [
+            {
+                "title": "Advanced Test Engine (MCQ + Descriptive)",
+                "description": "Supports hybrid tests with separate timers for MCQ and descriptive sections, sequential flow, and real exam simulation."
+            },
+            {
+                "title": "Multi-Attempt System",
+                "description": "Users can attempt the same test multiple times with separate attempt tracking, state persistence, and result history."
+            },
+            {
+                "title": "Custom Test Package Builder",
+                "description": "Allows users to create their own test bundles and dynamically calculates pricing, with smart upsell suggestions for pre-made packages."
+            },
+            {
+                "title": "Teacher Evaluation Workflow",
+                "description": "Descriptive answers can be submitted for paid evaluation, enabling a monetized review system with feedback and scoring."
+            },
+            {
+                "title": "Admin Dashboard",
+                "description": "Full admin control to manage courses, mock tests, questions, pricing, and content dynamically."
+            },
+            {
+                "title": "Authentication & Access Control",
+                "description": "Integrated Clerk authentication with protected routes ensuring only authorized users can access tests and courses."
+            }
+        ],
+        "categories": [
+            "edtech",
+            "web-app",
+            "fullstack"
+        ],
+        "github": "https://github.com/docstard",
+        "imageGallery": [
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCNgN7tCYeBEx5KOZsD0Lhc5UYXX4LdhLcGHgnGBiEtbzZh817YPD0mgqOTlrrV_ek5pXsbQl4P-fyQopFNd9Tq7yCFcqlIDNYTAXL9-R1eWUd16VsBRm99YU048MzV2qmXzAj8nhcwxKtckLzPlVsdEGaMo9xiZWpapOPdXIRU3qV3fawawZJsWm1F6KLBrZC-pgjW4W7wYaO3o1UvWFIV_Nnh_Q1nrHM00dp514dxBRyRrUOu0gdXrPM0SHH4LyWavtD9TQ9_-N4",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuBM4rtPJ257oCl_6wudOgeMQGHG14QtuCMnAsjF2n3auotYl_pJaW7TDSoesPrB7KzzjFz0DE5UbV19tkqdB0iEs62ZHAQrsV6lZGb3RtNplGBmMKZsf8_bNJ_6haVSRThhSXEO_38yf3fU5uJyycBaN6KO7aklC2xLmSydjS9YfgL0tR7ubcZhYMO69OzTpO_FsMhkEcRY3NX1nw46fRR5lJvTRPMhYv1JmkZqHxrRqLZhoqiydhJNcne4Rmd-4LUtSCHHKg6p47Y"
+        ],
+        "status": "In Progress"
     }
 ]

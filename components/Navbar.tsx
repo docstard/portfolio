@@ -51,8 +51,6 @@ export default function Navbar() {
             </a>
         </div>
 
-
-
         <button
           className="lg:hidden flex items-center"
           onClick={() => setIsOpen(!isOpen)}
@@ -62,7 +60,7 @@ export default function Navbar() {
           </span>
         </button>
 
-        <Button className="text-sm hidden md:flex shadow-none hover:scale-100 w-fit " size="sm" >
+        <Button link="/contact" className="text-sm hidden md:flex shadow-none hover:scale-100 w-fit " size="sm" >
           Book a Free Call
         </Button>
       </div>
@@ -88,7 +86,6 @@ export default function Navbar() {
           {/* Mobile CTA */}
           <Button
             link="/contact"
-
             className="px-2"
           >
             Book a Call

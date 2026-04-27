@@ -3,87 +3,12 @@ import ProcessSteps from "@/components/processSteps";
 import TechStack from "@/components/techStack";
 import serviceData from "@/data/serviceData.json";
 
-// const servicesData = [
-//     {
-//         id: "website-dev",
-//         card_logo: "language",
-//         title: "Website Development",
-//         description: "Custom high-speed websites optimized for conversion and brand impact.",
-//         features: [
-//             "Responsive Architecture",
-//             "SEO Optimization",
-//             "Core Web Vitals Ready",
-//         ],
-//     },
-//     {
-//         id: "saas-products",
-//         card_logo: "dashboard_customize",
-//         title: "SaaS Products",
-//         description: "Custom software solutions tailored to your business needs.",
-//         features: [
-//             "Multi-tenant Systems",
-//             "Subscription Engine",
-//             "API Integration",
-//         ],
-//     },
-//     {
-//         id: "ecommerce",
-//         card_logo: "shopping_bag",
-//         title: "Premium eCommerce",
-//         description: "Immersive online shopping experiences with frictionless checkout flows.",
-//         features: [
-//             "Custom Checkout",
-//             "Inventory Automation",
-//             "Global Payments",
-//         ],
-//     },
 
-//     {
-//         id: "ui-ux-design",
-//         card_logo: "draw",
-//         title: "UI/UX Design",
-//         description: "Modern user experiences built on deep research and psychological patterns.",
-//         features: [
-//             "User Journey Mapping",
-//             "High-Fidelity Prototyping",
-//             "Design Systems",
-//         ],
-//     },
-//     {
-//         id: "ai-solutions",
-//         card_logo: "smart_toy",
-//         title: "AI Solutions",
-//         description: "Integrating Large Language Models and custom AI tools into your workflow.",
-//         features: [
-//             "Custom LLM Fine-tuning",
-//             "Vector Databases",
-//             "RAG Architectures",
-//         ],
-//     },
-//     {
-//         id: "workflow-automation",
-//         card_logo: "settings_suggest",
-//         title: "Workflow Automation",
-//         description: "Reducing manual tasks through intelligent software and API bridges.",
-//         features: [
-//             "RPA Implementations",
-//             "Low-code Integration",
-//             "Data Pipelines",
-//         ],
-//     },
-//     {
-//         id: "support-maintenance",
-//         card_logo: "shield",
-//         title: "Long-term Support & Maintenance",
-//         description: "Ongoing support and maintenance to keep your systems running smoothly.",
-//         features: [
-//             "24/7 Monitoring",
-//             "Security Patches",
-//             "Scaling Ops",
-//         ],
-//     },
-// ];
-
+export const metadata = {
+  title: "Services",
+  description:
+    "Web development, SaaS platforms, AI automation, UI/UX design and digital solutions.",
+};
 
 export default function ServicesPage() {
     return (
@@ -118,7 +43,7 @@ export default function ServicesPage() {
                             </span>
                         </Button>
 
-                        <Button className=" shadow-none" variant="glass" size={"md"}>
+                        <Button link="/portfolio" className="shadow-none" variant="glass" size={"md"}>
                             View Our Work
                         </Button>
                     </div>
@@ -324,15 +249,7 @@ export default function ServicesPage() {
                                     Trained on your internal docs to resolve 80% of customer
                                     inquiries instantly without human intervention.
                                 </p>
-                                <a
-                                    className="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
-                                    href="#"
-                                >
-                                    Learn More{" "}
-                                    <span className="material-symbols-outlined text-xs">
-                                        arrow_forward
-                                    </span>
-                                </a>
+                                
                             </div>
                         </div>
 
@@ -350,15 +267,7 @@ export default function ServicesPage() {
                                     Automatically extract insights from massive PDF libraries,
                                     contracts, and internal reports using custom RAG pipelines.
                                 </p>
-                                <a
-                                    className="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
-                                    href="#"
-                                >
-                                    Learn More{" "}
-                                    <span className="material-symbols-outlined text-xs">
-                                        arrow_forward
-                                    </span>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -369,60 +278,7 @@ export default function ServicesPage() {
             <TechStack />
 
             {/* Process Timeline */}
-            <section className="py-24 mx-auto  px-6">
-                <div className="text-center mb-20">
-                    <h2 className="text-3xl md:text-4xl font-black mb-4">Our Process</h2>
-                    <p className="text-slate-400">
-                        From concept to deployment in 5 structured phases.
-                    </p>
-                </div>
-
-                <div className="relative grid grid-cols-1 md:grid-cols-5 gap-8">
-                    <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-linear-to-r from-transparent via-white/30 to-transparent z-0"></div>
-
-                    {[
-                        {
-                            step: "01",
-                            title: "Discovery",
-                            desc: "Market research & business alignment.",
-                            highlight: true,
-                        },
-                        {
-                            step: "02",
-                            title: "Strategy",
-                            desc: "Roadmapping & technical architecture.",
-                        },
-                        {
-                            step: "03",
-                            title: "Design",
-                            desc: "Interactive prototyping & UI systems.",
-                        },
-                        {
-                            step: "04",
-                            title: "Dev",
-                            desc: "Agile sprints & QA testing cycles.",
-                        },
-                        {
-                            step: "05",
-                            title: "Launch",
-                            desc: "Deployment & ongoing maintenance.",
-                        },
-                    ].map((item) => (
-                        <div key={item.step} className="relative z-10 text-center">
-                            <div
-                                className={`size-24 rounded-full bg-background-dark border-4 mx-auto flex items-center justify-center mb-6 transition-colors
-                                     `}
-                            >
-                                <span className="text-2xl font-black">{item.step}</span>
-                            </div>
-
-                            <h4 className="font-bold mb-2">{item.title}</h4>
-                            <p className="text-slate-400 text-xs">{item.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-            {/* <ProcessSteps mainHeading="Our Process" subHeading="From concept to deployment in 5 structured phases." variant="dark" /> */}
+            <ProcessSteps mainHeading="Our Process" subHeading="From concept to deployment in 5 structured phases." variant="dark" />
 
             {/* FAQ Section */}
             <section className="py-24 max-w-3xl mx-auto px-6">

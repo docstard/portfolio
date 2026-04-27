@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 
@@ -12,6 +13,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div onClick={() => router.push(`portfolio/${project.id}`)} key={project.id} className="group relative flex flex-col">
             <div className="relative overflow-hidden rounded-xl aspect-16/10 bg-slate-200 dark:bg-slate-800">
                 <img
+                    
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     src={project.mainImage}
@@ -20,7 +22,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 <div className="absolute inset-0 bg-linear-to-t from-charcoal to-transparent opacity-60"></div>
 
                 <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                    {project.categories.map((tag : string) => (
+                    {project.categories.map((tag: string) => (
                         <span
                             key={tag}
                             className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md rounded border border-white/20 text-white"
