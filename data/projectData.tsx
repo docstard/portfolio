@@ -37,11 +37,11 @@ const projectData = [
                 "The platform combines smooth animations, clean UI, and optimized performance to deliver a premium digital product experience."
             ]
         },
-        "stats": {
-            "Conversion Rate Increase": "+28%",
-            "Revenue Growth": "+32%",
-            "Active Users": "12K+"
-        },
+        "stats": [
+            ["Conversion Rate Increase", "+28%"],
+            ["Revenue Growth", "+32%"],
+            ["Active Users", "12K+"]
+        ],
         "features": [
             {
                 "title": "Custom Scroll Animations",
@@ -72,7 +72,7 @@ const projectData = [
             "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776334461/Screenshot_2026-04-16_154249_zcga91.png",
             "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776334461/Screenshot_2026-04-16_154206_cevi1h.png",
             "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776334460/Screenshot_2026-04-16_154400_hmf3m2.png"
-            
+
         ],
         "status": "In Progress"
     },
@@ -105,11 +105,11 @@ const projectData = [
                 "It also introduces advanced features like custom test package creation, teacher evaluation workflows, and monetized descriptive answer checking."
             ]
         },
-        "stats": {
-            "Tests Supported": "500+",
-            "Question Capacity": "10K+",
-            "Modules Built": "15+"
-        },
+        "stats": [
+            ["Tests Supported", "500+"],
+            ["Question Capacity", "10K+"],
+            ["Modules Built", "15+"]
+        ],
         "features": [
             {
                 "title": "Advanced Test Engine (MCQ + Descriptive)",
@@ -138,7 +138,7 @@ const projectData = [
         ],
         "categories": [
             "edtech",
-            "web-app",
+            "saas",
             "fullstack"
         ],
         "github": "https://github.com/docstard",
@@ -184,11 +184,11 @@ const projectData = [
                 "It bridges the gap between job seekers and recruiters by combining automation, intelligence, and a seamless user experience."
             ]
         },
-        "stats": {
-            "Resumes Processed": "4000+",
-            "Jobs Scraped": "5000+",
-            "Model Accuracy": "85%+"
-        },
+        "stats": [
+            ["Resumes Processed", "4000+"],
+            ["Jobs Scraped", "5000+"],
+            ["Model Accuracy", "85%+"]
+        ],
         "features": [
             {
                 "title": "AI Resume Skill Extraction",
@@ -216,8 +216,7 @@ const projectData = [
             }
         ],
         "categories": [
-            "ai-ml",
-            "web-app",
+            "saas",
             "fullstack"
         ],
         "github": "#",
@@ -261,11 +260,11 @@ const projectData = [
                 "It plays a key role in user acquisition, brand positioning, and early product validation."
             ]
         },
-        "stats": {
-            "Pages Built": "10+",
-            "Sections Designed": "25+",
-            "Performance Score": "90+"
-        },
+        "stats": [
+            ["Pages Built", "10+"],
+            ["Sections Designed", "25+"],
+            ["Performance Score", "90+"]
+        ],
         "features": [
             {
                 "title": "SaaS Landing Page Architecture",
@@ -294,8 +293,8 @@ const projectData = [
         ],
         "categories": [
             "frontend",
-            "website",
-            "ui-ux"
+            "websites",
+            "uiux"
         ],
         "github": "#",
         "imageGallery": [
@@ -305,7 +304,7 @@ const projectData = [
             'https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776329956/proism_landing_page_4_jmhxum.png',
             'https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776329955/proism_landing_page_5_kja7x4.png',
             'https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1776329956/proism_landing_page_7_m3lpdx.png',
-            
+
         ],
         "status": "In Progress"
     },
@@ -338,11 +337,11 @@ const projectData = [
                 "Special emphasis was placed on frontend performance optimization and seamless user experience."
             ]
         },
-        "stats": {
-            "Modules Built": "10+",
-            "Quiz Engine": "Dynamic",
-            "Performance Boost": "Optimized Rendering"
-        },
+        "stats": [
+            ["Modules Built", "10+"],
+            ["Quiz Engine", "Dynamic"],
+            ["Performance Boost", "Optimized Rendering"]
+        ],
         "features": [
             {
                 "title": "Dynamic Quiz Engine",
@@ -371,8 +370,8 @@ const projectData = [
         ],
         "categories": [
             "edtech",
-            "frontend",
-            "web-app"
+            "saas",
+            "websites"
         ],
         "github": "#",
         "imageGallery": [
@@ -411,11 +410,11 @@ const projectData = [
                 "It focuses on improving productivity, simplifying data visualization, and delivering a polished admin experience."
             ]
         },
-        "stats": {
-            "Modules Designed": "8+",
-            "Dashboard Screens": "15+",
-            "UI Consistency": "100%"
-        },
+        "stats": [
+            ["Modules Designed", "8+"],
+            ["Dashboard Screens", "15+"],
+            ["UI Consistency", "100%"]
+        ],
         "features": [
             {
                 "title": "Sidebar Navigation",
@@ -435,9 +434,8 @@ const projectData = [
             }
         ],
         "categories": [
-            "dashboard",
-            "ui-design",
-            "web-app"
+            "uiux",
+            "saas"
         ],
         "github": "",
         "imageGallery": [
@@ -447,6 +445,360 @@ const projectData = [
             "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1777319838/Screenshot_2026-04-28_012621_fku6gw.png",
             "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1777319838/Screenshot_2026-04-28_012650_e7hgxi.png"
         ],
+        "status": "Completed"
+    },
+    {
+        "id": "airtel-forgery-detection-system",
+        "title": "Bharti Airtel - Aadhaar Forgery Detection System",
+        "description": "An AI-powered forgery detection and image classification system developed during a Data Science Internship at Bharti Airtel to identify forged Aadhaar cards submitted during SIM card issuance using deep learning, computer vision, GANs, and image forensics.",
+        "mainImage": "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1779534530/ChatGPT_Image_May_23_2026_04_38_32_PM_savzbf.png",
+        "tags": [
+            "Python",
+            "Data Science",
+            "Computer Vision",
+            "Deep Learning",
+            "CNN",
+            "GANs",
+            "YOLOv8",
+            "OpenCV",
+            "Image Forensics",
+            "Forgery Detection",
+            "Machine Learning"
+        ],
+        "languages": [
+            "Python"
+        ],
+        "challenges": "Detecting forged Aadhaar cards in real-time during SIM issuance was challenging due to sophisticated image manipulations, varying image quality, and the need for accurate detection with minimal processing delay.\nHandling forged regions, inconsistent document layouts, and limited datasets required advanced computer vision and deep learning techniques.",
+        "solution": "Developed a multi-stage forgery detection pipeline using CNNs, GAN-based data augmentation, YOLOv8 object detection, SLIC segmentation, and ORB/SURF feature matching. Implemented image forensic techniques such as Error Level Analysis, thresholding, contour detection, and homography estimation to identify manipulated regions and classify documents as genuine or forged.",
+        "overview": {
+            "Heading": "AI-Based Forgery Detection System for Secure SIM Issuance",
+            "text": [
+                "This project was developed during a Data Science Internship at Bharti Airtel focusing on telecom security and identity verification.",
+                "The system was designed to detect forged Aadhaar cards submitted during SIM card issuance using deep learning and image processing techniques.",
+                "Multiple forgery detection methodologies including CNNs, GANs, YOLOv8, SLIC segmentation, and feature matching were researched and implemented.",
+                "The project combined image forensics, object detection, and machine learning to improve fraud detection accuracy and automate document verification workflows."
+            ]
+        },
+        "stats": [
+            ["Internship Duration", "3 Months"],
+            ["Detection Accuracy", "99%"],
+            ["Models Used", "CNN, GANs, YOLOv8"]
+        ],
+        "features": [
+            {
+                "title": "Aadhaar Forgery Detection",
+                "description": "Automated detection of forged Aadhaar cards during SIM card issuance."
+            },
+            {
+                "title": "CNN-Based Image Classification",
+                "description": "Deep learning model for classifying documents as genuine or forged."
+            },
+            {
+                "title": "GAN-Based Data Augmentation",
+                "description": "Generated synthetic training samples to improve dataset diversity and model generalization."
+            },
+            {
+                "title": "YOLOv8 Object Detection",
+                "description": "Real-time object detection and localization of suspicious regions within documents."
+            },
+            {
+                "title": "SLIC Image Segmentation",
+                "description": "Segmented document images into superpixels for region-wise forgery analysis."
+            },
+            {
+                "title": "Feature Matching & Homography",
+                "description": "Used ORB/SURF feature matching and homography estimation to identify manipulated regions."
+            },
+            {
+                "title": "Image Forensics Analysis",
+                "description": "Implemented ELA, JPEG artifact analysis, blockiness analysis, and thresholding for forgery detection."
+            },
+            {
+                "title": "Document Validation",
+                "description": "Explored OCR, QR code verification, and geometric analysis for authenticity checks."
+            }
+        ],
+        "categories": [
+            "data-science",
+            "machine-learning",
+            "deep-learning",
+            "computer-vision",
+            "cyber-security",
+            "ai"
+        ],
+        "github": "#",
+        "imageGallery": null,
+        "status": "Completed"
+    },
+    {
+        "id": "proism-ai-career-optimization-platform",
+        "title": "Proism - AI-Powered Career Optimization Platform",
+        "description": "An AI-driven recruitment intelligence platform designed to automate resume analysis, skill extraction, job classification, and personalized job matching using Natural Language Processing and Machine Learning.",
+        "mainImage": "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1779534239/ChatGPT_Image_May_23_2026_02_06_10_PM_hy7v0l.png",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "NLP",
+            "spaCy",
+            "Scikit-learn",
+            "TF-IDF",
+            "Cosine Similarity",
+            "Naive Bayes",
+            "Recommendation System",
+            "Selenium",
+            "Data Science",
+            "AI"
+        ],
+        "languages": [
+            "Python",
+            "JavaScript"
+        ],
+        "challenges": "Building an intelligent recruitment platform required handling large amounts of unstructured resume and job description data while maintaining accurate matching and recommendation quality. Challenges included extracting technical skills from inconsistent resume formats, improving semantic understanding between jobs and resumes, automating job aggregation pipelines, and optimizing recommendation systems for scalability and real-time performance.",
+        "solution": "Developed multiple AI-powered NLP and machine learning pipelines using spaCy, TF-IDF vectorization, cosine similarity, Naive Bayes classification, and Nearest Neighbors recommendation systems. Implemented automated Selenium-based job scraping pipelines, custom preprocessing workflows, and scalable recommendation architectures to automate resume analysis, job classification, and personalized job discovery.",
+        "overview": {
+            "Heading": "Building an AI-Powered Recruitment Intelligence Platform",
+            "text": [
+                "Proism was designed to simplify and automate the job search and recruitment process using Artificial Intelligence and Natural Language Processing.",
+                "The platform analyzes resumes and job descriptions to extract technical skills, classify job domains, and calculate intelligent matching scores.",
+                "Multiple AI systems including custom Named Entity Recognition models, recommendation engines, and job classification pipelines were developed to enhance recruitment workflows.",
+                "The project combines machine learning, NLP, data engineering, and automation to create a scalable career optimization ecosystem for both job seekers and employers."
+            ]
+        },
+        "stats": [
+            ["Resumes Processed", "4000+"],
+            ["Jobs Analyzed", "5000+"],
+            ["Classification Accuracy", "85%+"]
+        ],
+        "features": [
+            {
+                "title": "Custom NER Skill Extraction",
+                "description": "Built a custom spaCy Named Entity Recognition model trained on 3000+ resumes to identify technical skills, frameworks, libraries, and tools."
+            },
+            {
+                "title": "AI Job-Resume Matching",
+                "description": "Implemented TF-IDF vectorization and cosine similarity algorithms to calculate semantic similarity between job descriptions and resumes."
+            },
+            {
+                "title": "Job Classification System",
+                "description": "Developed a Naive Bayes classification model trained on 5000+ job descriptions to categorize jobs into multiple professional domains."
+            },
+            {
+                "title": "Similar Jobs Recommendation Engine",
+                "description": "Built a recommendation system using Nearest Neighbors algorithms to suggest similar job opportunities based on semantic similarity and skill overlap."
+            },
+            {
+                "title": "Automated Job Scraping Pipeline",
+                "description": "Created Selenium-based automation pipelines to scrape, preprocess, and structure job data from platforms like Glassdoor."
+            },
+            {
+                "title": "NLP Preprocessing Workflow",
+                "description": "Implemented tokenization, stopword removal, normalization, and N-grams pipelines for improved semantic understanding."
+            },
+            {
+                "title": "Vector Similarity Computation",
+                "description": "Generated similarity matrices and ranking systems to intelligently prioritize relevant job recommendations."
+            },
+            {
+                "title": "Scalable AI Workflow",
+                "description": "Designed modular AI pipelines capable of handling large-scale resume analysis and recommendation workflows."
+            }
+        ],
+        "categories": [
+            "data-science",
+            "machine-learning",
+            "nlp",
+            "recommendation-system",
+            "ai",
+            "automation",
+            "saas"
+        ],
+        "github": "#",
+        "imageGallery": null,
+        "status": "In Progress"
+    },
+
+
+    {
+        "id": "ai-cold-email-generator",
+        "title": "AI Cold Email Generator",
+        "description": "An end-to-end Generative AI application that generates personalized cold emails for software and AI service companies using Llama 3.1, LangChain, ChromaDB, and Streamlit.",
+        "mainImage": "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1779534239/ChatGPT_Image_May_23_2026_02_07_27_PM_wplplx.png",
+        "tags": [
+            "Generative AI",
+            "LLM",
+            "Llama 3.1",
+            "LangChain",
+            "ChromaDB",
+            "RAG",
+            "Prompt Engineering",
+            "Streamlit",
+            "Python"
+        ],
+        "languages": [
+            "Python"
+        ],
+        "challenges": "The project required generating highly personalized cold emails while maintaining contextual relevance and scalability for different industries.",
+        "solution": "Implemented a Retrieval-Augmented Generation pipeline using LangChain and ChromaDB with prompt engineering workflows to automate high-quality cold email generation.",
+        "overview": {
+            "Heading": "Building an AI-Powered Cold Outreach System",
+            "text": [
+                "Developed a Generative AI application capable of creating personalized cold outreach emails.",
+                "The project integrates vector embeddings, retrieval systems, and prompt engineering workflows.",
+                "Streamlit was used to build an interactive interface for real-time email generation.",
+                "The system helps software and AI service companies automate lead outreach workflows."
+            ]
+        },
+        "stats": [
+            ["LLM Used", "Llama 3.1"],
+            ["Architecture", "RAG Pipeline"],
+            ["Use Case", "Cold Outreach Automation"]
+        ],
+        "features": [
+            {
+                "title": "RAG Pipeline",
+                "description": "Implemented a Retrieval-Augmented Generation workflow using LangChain and ChromaDB."
+            },
+            {
+                "title": "Prompt Engineering",
+                "description": "Designed prompts and context pipelines for generating conversion-focused cold emails."
+            },
+            {
+                "title": "Interactive Streamlit UI",
+                "description": "Built a user-friendly dashboard for generating customized outreach emails in real time."
+            }
+        ],
+        "categories": [
+            "generative-ai",
+            "llm",
+            "rag",
+            "automation",
+            "nlp",
+            "ai",
+            "websites"
+        ],
+        "github": "#",
+        "imageGallery": null,
+        "status": "Completed"
+    },
+    {
+        "id": "llm-news-research-tool",
+        "title": "LLM-Powered News Research Tool",
+        "description": "An AI-powered research assistant built using LangChain, OpenAI API, vector embeddings, and Streamlit to extract insights from financial and news articles.",
+        "mainImage": "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1779534238/ChatGPT_Image_May_23_2026_04_30_04_PM_wh6uid.png",
+        "tags": [
+            "LLM",
+            "LangChain",
+            "OpenAI API",
+            "NLP",
+            "Semantic Search",
+            "Vector Embeddings",
+            "Streamlit",
+            "AI"
+        ],
+        "languages": [
+            "Python"
+        ],
+        "challenges": "The project required handling large unstructured news datasets while enabling context-aware querying and intelligent summarization.",
+        "solution": "Implemented document ingestion, semantic search, vector embeddings, and prompt workflows to create a scalable AI research assistant.",
+        "overview": {
+            "Heading": "Building an AI Research Assistant",
+            "text": [
+                "Developed a research automation tool capable of analyzing and summarizing news articles.",
+                "The project uses vector databases and semantic retrieval for context-aware querying.",
+                "Prompt engineering workflows were designed to generate structured insights and summaries.",
+                "The system simulates real-world equity research and financial analysis workflows."
+            ]
+        },
+        "stats": [
+            ["Core Stack", "LangChain + OpenAI"],
+            ["Architecture", "Semantic Search Pipeline"],
+            ["Use Case", "Research Automation"]
+        ],
+        "features": [
+            {
+                "title": "Semantic Search Engine",
+                "description": "Implemented vector embeddings and semantic retrieval for intelligent querying."
+            },
+            {
+                "title": "Document Ingestion Pipeline",
+                "description": "Built automated workflows for parsing and processing unstructured news articles."
+            },
+            {
+                "title": "AI Summarization Workflow",
+                "description": "Designed prompt pipelines to generate summarized and structured research insights."
+            }
+        ],
+        "categories": [
+            "generative-ai",
+            "llm",
+            "semantic-search",
+            "nlp",
+            "research-automation",
+            "ai",
+            "websites"
+        ],
+        "github": "#",
+        "imageGallery": null,
+        "status": "Completed"
+    },
+    {
+        "id": "cnn-scenery-classification-system",
+        "title": "CNN-Based Scenery Classification System",
+        "description": "A deep learning-powered scenery classification system built using Convolutional Neural Networks (CNNs) to classify indoor and outdoor images across multiple environmental categories.",
+        "mainImage": "https://res.cloudinary.com/duq3nzqp6/image/upload/q_auto/f_auto/v1779534239/ChatGPT_Image_May_23_2026_04_33_44_PM_hajmfg.png",
+        "tags": [
+            "Deep Learning",
+            "CNN",
+            "TensorFlow",
+            "Keras",
+            "Computer Vision",
+            "Image Classification",
+            "Python",
+            "AI"
+        ],
+        "languages": [
+            "Python"
+        ],
+        "challenges": "The project required training a CNN model capable of handling high-dimensional image data while improving classification accuracy across visually similar scenery categories.",
+        "solution": "Developed and trained a Convolutional Neural Network using TensorFlow and Keras with preprocessing, augmentation, and feature extraction pipelines to improve classification performance.",
+        "overview": {
+            "Heading": "Building a Deep Learning-Based Scenery Recognition System",
+            "text": [
+                "Developed a CNN-powered image classification system capable of recognizing multiple indoor and outdoor scenery categories.",
+                "The project utilized deep learning architectures for automatic feature extraction and image understanding.",
+                "Implemented image preprocessing, normalization, and augmentation workflows to improve generalization performance.",
+                "The system demonstrates practical applications of deep learning and computer vision in large-scale image classification tasks."
+            ]
+        },
+        "stats": [
+            ["Architecture", "Convolutional Neural Network"],
+            ["Domain", "Computer Vision"],
+            ["Task", "Multi-Class Image Classification"]
+        ],
+        "features": [
+            {
+                "title": "CNN-Based Feature Extraction",
+                "description": "Built deep learning pipelines using convolutional neural networks for automated image feature extraction."
+            },
+            {
+                "title": "Image Augmentation Pipeline",
+                "description": "Implemented augmentation and normalization workflows to improve model robustness and reduce overfitting."
+            },
+            {
+                "title": "Multi-Class Scenery Recognition",
+                "description": "Designed a classification system capable of identifying multiple indoor and outdoor scenery environments."
+            }
+        ],
+        "categories": [
+            "deep-learning",
+            "computer-vision",
+            "cnn",
+            "image-classification",
+            "ai",
+            "websites"
+        ],
+        "github": "#",
+        "imageGallery": null,
         "status": "Completed"
     }
 ]

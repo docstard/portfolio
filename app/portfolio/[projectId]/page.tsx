@@ -141,9 +141,9 @@ export default function ProjectDetailPage() {
                         <div className="lg:col-span-5">
                             <div className="glass-card rounded-2xl p-10 h-full">
                                 <h4 className="text-xl font-bold text-white mb-10">Core Results</h4>
-                                {[["40%", "Revenue Growth"], ["2.5s", "Response Time"], ["12k", "Active Users"]].map(([value, label]) => (
+                                {project?.stats?.map(([label, value]) => (
                                     <div key={label} className="flex items-center gap-6 mb-8">
-                                        <span className="text-5xl font-extrabold gradient-text">{value}</span>
+                                        <span className="text-2xl font-extrabold gradient-text">{value}</span>
                                         <p className="text-sm font-bold uppercase tracking-widest text-white">{label}</p>
                                     </div>
                                 ))}
@@ -153,8 +153,8 @@ export default function ProjectDetailPage() {
                 </section>
 
                 {/* CHALLENGE & SOLUTION (VERTICAL SCROLL SECTION) */}
-                <section ref={lenisRef} id="vertical" className="py-24 bg-charcoal h-full md:h-[200vh] w-full overflow-hidden">
-                    <div className="vertical__container max-w-7xl mx-auto md:sticky md:top-0 md:h-screen flex items-center">
+                <section ref={lenisRef} id="vertical" className="py-24 bg-charcoal h-full md:h-[120vh] w-full overflow-hidden">
+                    <div className="vertical__container max-w-7xl mx-auto md:sticky md:top-96 md:h-screen flex items-center">
                         <div className="vertical__content flex-col md:flex-row flex justify-center items-start w-full gap-12">
                             {/* Animated Column */}
                             <div className="col col_left w-full md:w-1/2 glass-card rounded-2xl overflow-hidden aspect-video">
@@ -172,7 +172,11 @@ export default function ProjectDetailPage() {
                                         <span className="material-symbols-outlined text-4xl text-red-400">error_outline</span>
                                         <h2 className="text-4xl font-extrabold text-white">The Challenge.</h2>
                                     </div>
-                                    <p className="text-lg text-slate-400 mt-6">{project?.challenges}</p>
+                                    {project?.challenges.split('\n').map((challenge, index) => (
+                                        <p key={index} className="text-lg text-slate-400">
+                                            {challenge}
+                                        </p>
+                                    ))}
                                 </div>
 
                                 <div className="vertical__item">
@@ -192,7 +196,7 @@ export default function ProjectDetailPage() {
                 </section>
 
                 {/* FEATURES */}
-                <section className="py-24 px-6">
+                <section className="py-24 px-6 pt-10">
                     <div className="max-w-7xl mx-auto text-center mb-16">
                         <h2 className="text-4xl font-extrabold text-white mb-4">Powerful Features.</h2>
                     </div>
@@ -205,40 +209,44 @@ export default function ProjectDetailPage() {
                         ))}
                     </div>
                 </section>
-                <div className="hidden md:inline">
-                    <ProjectGallery className="hidden" images={project?.imageGallery} />
-                </div>
-                <div className="md:hidden">
-                    <section
-                        className={`relative px-6 bg-charcoal border-t border-white/5 h-auto py-12"`}
-                    >
-                        <div
-                            className="relative h-auto max-w-7xl mx-auto flex flex-col items-center"
-                        >
-                            <h2 className="text-4xl font-bold text-white text-center mb-12 mt-12">
-                                Project Gallery
-                            </h2>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-                                {project?.imageGallery.map((img: any, index: number) => (
-                                    <div
-                                        key={index}
-                                        className="relative w-full h-full">
-                                        <div
-                                            className={`group relative overflow-hidden rounded-xl border border-white/10 w-full `}
-                                        >
-                                            <img
-                                                src={img}
-                                                alt={`Project image ${index + 1}`}
-                                                className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                {project?.imageGallery == null ? null :
+                    <>
+                        <div className="hidden md:inline">
+                            <ProjectGallery className="hidden" images={project?.imageGallery} />
                         </div>
-                    </section>
-                </div>
+                        <div className="md:hidden">
+                            <section
+                                className={`relative px-6 bg-charcoal border-t border-white/5 h-auto py-12"`}
+                            >
+                                <div
+                                    className="relative h-auto max-w-7xl mx-auto flex flex-col items-center"
+                                >
+                                    <h2 className="text-4xl font-bold text-white text-center mb-12 mt-12">
+                                        Project Gallery
+                                    </h2>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                                        {project?.imageGallery.map((img: any, index: number) => (
+                                            <div
+                                                key={index}
+                                                className="relative w-full h-full">
+                                                <div
+                                                    className={`group relative overflow-hidden rounded-xl border border-white/10 w-full `}
+                                                >
+                                                    <img
+                                                        src={img}
+                                                        alt={`Project image ${index + 1}`}
+                                                        className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                                                    />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </>
+                }
 
                 {/* CTA */}
                 <section className="py-24 px-6 bg-charcoal text-center">

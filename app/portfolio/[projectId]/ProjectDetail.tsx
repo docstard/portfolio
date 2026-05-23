@@ -19,7 +19,7 @@ const ProjectDetail = () => {
     const project = projectData?.find((p) => p?.id === projectId);
 
     const galleryImages = [
-        
+
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
         "https://images.unsplash.com/photo-1556761175-4b46a572b786",
         "https://images.unsplash.com/photo-1559136555-9303baea8ebd",
@@ -48,9 +48,12 @@ const ProjectDetail = () => {
                             {/* <span className="gradient-text">{project?.subtitle}</span> */}
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-slate-400 mb-10">
-                            {project?.description}
-                        </p>
+                        {project?.description.split('\n\n').map((paragraph, index) => (
+                            <p className="text-xl md:text-2xl text-slate-400 mb-10 whitespace-pre-wrap">
+                                {paragraph}
+                            </p>
+                        ))}
+
 
                         <div className="flex flex-wrap gap-3">
                             {project?.tags.map((tag) => (
@@ -64,16 +67,18 @@ const ProjectDetail = () => {
                         </div>
                     </div>
 
-                    <div className="relative group">
-                        <div className="absolute -inset-4 bg-linear-to-r from-accent-cyan/20 to-accent-purple/20 blur-2xl rounded-4xl opacity-50" />
-                        <div className="relative rounded-2xl overflow-hidden glass-card aspect-4/3">
-                            <Image
-                                src={project?.mainImage || ""}
-                                alt={project?.id || "Project image"}
-                                className="w-full h-full object-cover"
-                            />
+                    {project?.mainImage &&
+                        <div className="relative group">
+                            <div className="absolute -inset-4 bg-linear-to-r from-accent-cyan/20 to-accent-purple/20 blur-2xl rounded-4xl opacity-50" />
+                            <div className="relative rounded-2xl overflow-hidden glass-card aspect-4/3">
+                                <Image
+                                    src={project?.mainImage || ""}
+                                    alt={project?.id || "Project image"}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </section>
 
@@ -99,12 +104,8 @@ const ProjectDetail = () => {
                         <div className="glass-card rounded-2xl p-10 h-full">
                             <h4 className="text-xl font-bold text-white mb-10">Core Results</h4>
 
-                            {[
-                                ["40%", "Revenue Growth"],
-                                ["2.5s", "Response Time"],
-                                ["12k", "Active Users"],
-                            ].map(([value, label]) => (
-                                <div key={label} className="flex items-center gap-6 mb-8">
+                            {project?.stats?.map(([label, value], index) => (
+                                <div key={label || index} className="flex items-center gap-6 mb-8">
                                     <span className="text-5xl font-extrabold gradient-text">
                                         {value}
                                     </span>
@@ -144,6 +145,11 @@ const ProjectDetail = () => {
                                     The Challenge.
                                 </h2>
                             </div>
+                            {project?.challenges.split('\n').map((challenge, index) => (
+                                <p key={index} className="text-lg text-slate-400">
+                                    {challenge}
+                                </p>
+                            ))}
                             <p className="text-lg text-slate-400">
                                 {project?.challenges}
                             </p>
@@ -206,7 +212,10 @@ const ProjectDetail = () => {
                 </div>
             </section>
 
-            <ProjectGallery images={galleryImages} />
+            {project?.imageGallery == null ?
+                null :
+                <ProjectGallery images={project?.imageGallery} />
+            }
 
             {/* CTA */}
             <section className="py-24 px-6 bg-charcoal text-center">

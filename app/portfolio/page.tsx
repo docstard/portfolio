@@ -7,6 +7,7 @@ const FILTERS = [
     { label: "All Projects", value: "all" },
     { label: "Websites", value: "websites" },
     { label: "eCommerce", value: "ecommerce" },
+    { label: "Ed-tech", value: "edtech" },
     { label: "SaaS / Web Apps", value: "saas" },
     { label: "AI Solutions", value: "ai" },
     { label: "UI/UX Design", value: "uiux" },
@@ -58,8 +59,8 @@ export default function PortfolioPage() {
                                 key={filter.value}
                                 onClick={() => setActiveFilter(filter.value)}
                                 className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-medium transition-all ${isActive
-                                        ? "bg-primary text-white"
-                                        : "glass-card hover:bg-primary/10"
+                                    ? "bg-primary text-white"
+                                    : "glass-card hover:bg-primary/10"
                                     }`}
                             >
                                 {filter.label}
@@ -79,7 +80,7 @@ export default function PortfolioPage() {
                                 : FILTERS.find((f) => f.value === activeFilter)?.label}
                         </h2>
 
-                      
+
                     </div>
 
                     {filteredProjects.length === 0 ? (
